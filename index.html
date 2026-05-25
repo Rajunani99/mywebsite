@@ -1,24 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Raju Ravi Baji Sai</title>
+    <title>Secure Website</title>
+
+    <script>
+        function checkPassword() {
+
+            var password = document.getElementById("password").value;
+
+            if(password === "raju123") {
+
+                document.getElementById("content").style.display = "block";
+                document.getElementById("login").style.display = "none";
+
+            } else {
+
+                alert("Wrong Password");
+
+            }
+        }
+    </script>
 </head>
 
 <body style="
-background: linear-gradient(to right, #141e30, #243b55);
-color: white;
-font-family: Arial;
+background:#111;
+color:white;
+font-family:Arial;
 text-align:center;
 padding-top:150px;
-height:100vh;
-margin:0;
 ">
 
-<h1 style="font-size:50px;">Raju Ravi Baji Sai</h1>
+<div id="login">
 
-<p style="font-size:25px;">
-Welcome to my website 🚀
-</p>
+    <h1>Protected Website 🔒</h1>
+
+    <input type="password" id="password"
+    placeholder="Enter Password"
+    style="padding:10px; width:220px;">
+
+    <br><br>
+
+    <button onclick="checkPassword()"
+    style="padding:10px 20px;">
+    Open Website
+    </button>
+
+</div>
+
+<div id="content" style="display:none;">
+
+    <h1>Raju Ravi Baji Sai</h1>
+
+    <p>Welcome to my secure website 🚀</p>
+
+</div>
 
 </body>
 </html>
