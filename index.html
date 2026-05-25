@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Secure Website</title>
+    <title>2-Step Secure Website</title>
 
     <script>
-        function checkPassword() {
 
-            var password = document.getElementById("password").value;
+        function login() {
 
-            if(password === "raju123") {
+            var username =
+            document.getElementById("username").value;
 
-                document.getElementById("content").style.display = "block";
-                document.getElementById("login").style.display = "none";
+            var password =
+            document.getElementById("password").value;
+
+            if(username === "raju" &&
+               password === "raju@2000") {
+
+                document.getElementById("loginBox").style.display = "none";
+
+                document.getElementById("website").style.display = "block";
 
             } else {
 
-                alert("Wrong Password");
+                alert("Wrong Username or Password");
 
             }
         }
+
     </script>
 </head>
 
 <body style="
-background:#111;
-color:white;
+background:#0f172a;
 font-family:Arial;
+color:white;
 text-align:center;
-padding-top:150px;
+padding-top:120px;
+margin:0;
 ">
 
-<div id="login">
+<div id="loginBox">
 
-    <h1>Protected Website 🔒</h1>
+<h1>🔒 Secure Login</h1>
 
-    <input type="password" id="password"
-    placeholder="Enter Password"
-    style="padding:10px; width:220px;">
+<input type="text"
+id="username"
+placeholder="Username"
+style="
+padding:12px;
+width:250px;
+border:none;
+border-radius:8px;
+margin:10px;
+">
 
-    <br><br>
+<br>
 
-    <button onclick="checkPassword()"
-    style="padding:10px 20px;">
-    Open Website
-    </button>
+<input type="password"
+id="password"
+placeholder="Password"
+style="
+padding:12px;
+width:250px;
+border:none;
+border-radius:8px;
+margin:10px;
+">
+
+<br><br>
+
+<button onclick="login()"
+style="
+padding:12px 25px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+">
+Login
+</button>
 
 </div>
 
-<div id="content" style="display:none;">
+<div id="website" style="display:none;">
 
-    <h1>Raju Ravi Baji Sai</h1>
+<h1>Raju Ravi Baji Sai 🚀</h1>
 
-    <p>Welcome to my secure website 🚀</p>
+<p>Welcome to my protected website</p>
 
 </div>
 
