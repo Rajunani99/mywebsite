@@ -1,3 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Secure Website</title>
+
+<script>
+
+let generatedOTP = "";
+
+function login() {
+
+    var username =
+    document.getElementById("username").value;
+
+    var password =
+    document.getElementById("password").value;
+
+    if(username === "raju" &&
+       password === "raju@2000") {
+
+        generatedOTP =
+        Math.floor(100000 + Math.random() * 900000);
+
+        alert("Your OTP is: " + generatedOTP);
+
+        document.getElementById("otpBox").style.display = "block";
+
+    } else {
+
+        alert("Wrong Username or Password");
+
+    }
+}
+
+function verifyOTP() {
+
+    var enteredOTP =
+    document.getElementById("otp").value;
+
+    if(enteredOTP == generatedOTP) {
+
+        document.getElementById("loginBox").style.display = "none";
+
+        document.getElementById("otpBox").style.display = "none";
+
+        document.getElementById("website").style.display = "block";
+
+    } else {
+
+        alert("Wrong OTP");
+
+    }
+}
+
+</script>
+
+</head>
+
+<body style="
+background:#0f172a;
+font-family:Arial;
+color:white;
+text-align:center;
+padding-top:120px;
+margin:0;
+">
+
+<div id="loginBox">
+
+<h1>🔒 Secure Login</h1>
+
+<input type="text"
+id="username"
+placeholder="Username"
+style="
+padding:12px;
+width:250px;
+border:none;
+border-radius:8px;
+margin:10px;
+">
+
+<br>
+
+<input type="password"
+id="password"
+placeholder="Password"
+style="
+padding:12px;
+width:250px;
+border:none;
+border-radius:8px;
+margin:10px;
+">
+
+<br><br>
+
+<button onclick="login()"
+style="
+padding:12px 25px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+font-size:16px;
+">
+Login
+</button>
+
+</div>
+
 <div id="otpBox" style="display:none;">
 
 <h2>Enter OTP</h2>
@@ -27,3 +138,14 @@ Verify OTP
 </button>
 
 </div>
+
+<div id="website" style="display:none;">
+
+<h1>Raju Ravi Baji Sai 🚀</h1>
+
+<p>Welcome to my protected website</p>
+
+</div>
+
+</body>
+</html>
